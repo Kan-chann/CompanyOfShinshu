@@ -504,6 +504,25 @@ ul {
       padding: 8px 15px;
       min-width: 140px;
   }
+  
+  /* Hero Content - Mobile refinement */
+  .hero__content {
+      margin-top: 25vh; /* Reduce from 50vh to center content better on mobile */
+      margin-bottom: 20px;
+      padding: 0 15px; /* Prevent text touching edges */
+  }
+
+  .hero__title {
+      font-size: 1.6rem; /* Slightly elegant size */
+      line-height: 1.6;
+      margin-bottom: 15px;
+      /* text-shadow: 0 2px 4px rgba(0,0,0,0.3); Optional shadow if bg needs it */
+  }
+  
+  .hero__subtitle {
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+  }
 }
 
 .hero__btn {
