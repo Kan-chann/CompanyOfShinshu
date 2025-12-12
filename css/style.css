@@ -452,14 +452,6 @@ ul {
     pointer-events: none; /* Let clicks pass through if needed */
 }
 
-@media (max-width: 768px) {
-    .hero__company-label {
-        top: 140px; /* Mobile adjust (maybe smaller header on mobile? keeping consistent for now) */
-        left: 15px;
-        font-size: 1.8rem; /* Smaller for mobile */
-    }
-}
-
 /* Hero Contact (Sticky Buttons) */
 .hero__contact {
     position: fixed; /* Fixed to viewport */
@@ -472,11 +464,46 @@ ul {
     align-items: flex-end;
 }
 
+/* Mobile Layout Refinements */
 @media (max-width: 768px) {
-    .hero__contact {
-        top: 140px; /* Mobile adjustment */
-        right: 15px; /* Adjust for mobile */
-    }
+  /* Header resizing */
+  .header {
+    height: 90px;
+  }
+
+  .header__logo img {
+    height: 60px;
+  }
+  
+  .header__logo span {
+      font-size: 1.2rem;
+  }
+  
+  /* Hero adjustment */
+  .hero {
+      padding-top: 90px;
+  }
+
+  /* Company Label positioning */
+  .hero__company-label {
+      top: 110px; /* Header 90px + 20px */
+      left: 20px;
+      font-size: 2rem; /* Smaller than desktop 4rem/3rem */
+  }
+
+  /* Contact Buttons positioning */
+  .hero__contact {
+      top: 110px; /* Header 90px + 20px */
+      right: 15px;
+      gap: 10px;
+  }
+  
+  /* Adjust button size for mobile if needed */
+  .hero__btn {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+      min-width: 140px;
+  }
 }
 
 .hero__btn {
