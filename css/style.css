@@ -103,7 +103,7 @@ ul {
   background-color: rgba(252, 250, 242, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   z-index: 1000;
-  height: 80px;
+  height: 110px; /* Increased from 80px to accommodate larger logo */
   display: flex;
   align-items: center;
 }
@@ -124,6 +124,19 @@ ul {
     font-weight: bold;
     color: var(--color-primary);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Increased gap slightly */
+}
+
+.header__logo span {
+    font-size: 2rem; /* Increased from default (inherited 1.5rem) to 2rem */
+    font-weight: bold;
+}
+
+.header__logo img {
+    height: 90px; /* 1.5x of previous 60px */
+    width: auto;
 }
 
 .header__nav {
@@ -165,7 +178,7 @@ ul {
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  padding-top: 80px;
+  padding-top: 110px; /* Matched to new header height */
 }
 
 .hero__bg {
@@ -175,7 +188,7 @@ ul {
     width: 100%;
     height: 100%;
     background-color: var(--color-bg);
-    background-image: url('../assets/Companylogo.jpg');
+    background-image: url('../assets/home_top.png'); /* Switched to home_top.png */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -424,12 +437,12 @@ ul {
     color: #fff; /* White text for contrast */
 }
 
-/* Hero Contact */
+/* Hero Contact (Sticky Buttons) */
 .hero__contact {
-    position: absolute;
-    top: 100px; /* Below header */
+    position: fixed; /* Fixed to viewport */
+    top: 130px; /* Adjusted: 110px header + 20px spacing */
     right: 30px;
-    z-index: 10;
+    z-index: 2000; /* Above header (1000) and hamburger (1001) if desired, or just high enough */
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -438,7 +451,7 @@ ul {
 
 @media (max-width: 768px) {
     .hero__contact {
-        top: 90px;
+        top: 120px; /* Mobile adjustment */
         right: 15px; /* Adjust for mobile */
     }
 }
@@ -548,9 +561,82 @@ ul {
 .header__hamburger span:nth-child(2) {
   top: 11px;
 }
-.header__hamburger span:nth-child(3) {
-  bottom: 0;
+/* Mobile Utility Classes */
+.sp-only {
+  display: none;
 }
+
+@media (max-width: 768px) {
+  .sp-only {
+    display: block;
+  }
+  .pc-only {
+    display: none;
+  }
+}
+
+/* Layout Utilities - Mobile Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px; /* Smaller padding on mobile */
+    }
+    
+    .section {
+        padding: 60px 0; /* Reduced vertical padding */
+    }
+    
+    .section__header {
+        margin-bottom: 40px;
+    }
+    
+    .section__title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Hero Section - Mobile */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 1.8rem; /* Smaller font for mobile */
+        line-height: 1.4;
+    }
+    
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero__btn {
+        padding: 10px 20px;
+        min-width: 160px;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Service Section - Mobile */
+.service__grid {
+    display: grid;
+    /* Adjust minmax to support smaller mobile screens */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+}
+
+
+/* Contact Section - Mobile */
+@media (max-width: 768px) {
+    .contact__qr-container {
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact__qr-item {
+        width: 100%;
+        max-width: 320px; /* Limit width on mobile */
+        padding: 15px 30px;
+    }
+}
+
 
 @media (min-width: 768px) {
   .header__hamburger {
