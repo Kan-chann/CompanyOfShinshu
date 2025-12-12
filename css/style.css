@@ -391,28 +391,86 @@ ul {
 
 .contact__qr-item {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 200px; /* Fixed width for consistency */
+}
+
+.contact__qr-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    opacity: 1; /* Override default link hover opacity */
+}
+
+.contact__btn--line {
+    background-color: #06C755; /* LINE Green */
+    color: #fff;
+}
+
+.contact__btn--insta {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); /* Instagram Gradient */
+    color: #fff;
 }
 
 .contact__qr-item p {
-    margin-top: 10px;
+    margin-top: 15px;
     font-weight: bold;
-    color: var(--color-primary);
+    font-size: 1.2rem;
+    color: #fff; /* White text for contrast */
 }
 
-.contact__qr-img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+/* Hero Contact */
+.hero__contact {
+    position: absolute;
+    top: 100px; /* Below header */
+    right: 30px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
 }
 
-.contact__qr-img:hover {
-    transform: scale(1.05);
+@media (max-width: 768px) {
+    .hero__contact {
+        top: 90px;
+        right: 15px; /* Adjust for mobile */
+    }
 }
+
+.hero__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, opacity 0.3s;
+    text-decoration: none;
+    min-width: 180px;
+}
+
+.hero__btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.hero__btn--line {
+    background-color: #06C755; /* LINE Green */
+}
+
+.hero__btn--insta {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); /* Instagram Gradient */
+}
+
 
 /* Footer */
 .footer {
@@ -431,7 +489,7 @@ ul {
 
 .footer__logo img {
   width: 60px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   filter: brightness(0) invert(1);
 }
 
@@ -439,6 +497,29 @@ ul {
   font-size: 0.8rem;
   opacity: 0.7;
 }
+
+/* Updated Contact QR Item (Now Text Button) */
+.contact__qr-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 20px 40px; /* Increase horizontal padding */
+    border-radius: 50px; /* Find pill shape */
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: auto; /* Let width fit content */
+    min-width: 250px;
+}
+
+.contact__qr-item p {
+    margin: 0; /* Remove top margin */
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
 
 /* Mobile Menu Button */
 .header__hamburger {
